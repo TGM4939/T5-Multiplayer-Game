@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: a7914e121d26c485e92228df65d5dcd7
+timeCreated: 1491305461
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: SF Comic Script
+  fontNames:
+  - SF Comic Script
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 91468c8deaaa94fb1b43448070532bbb, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

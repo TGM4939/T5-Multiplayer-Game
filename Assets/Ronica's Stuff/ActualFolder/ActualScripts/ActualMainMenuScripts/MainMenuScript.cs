@@ -4,54 +4,76 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainMenuScript : MonoBehaviour {
+public class MainMenuScript : MonoBehaviour
+{
+	private Animator m_animator;
 
-	private GameObject optionsPanel, creditsPanel, helpPanel;
+	//private GameObject optionsPanel, creditsPanel, helpPanel;
 
 	void Awake () 
 	{
-		optionsPanel = GameObject.Find("OptionsPanel");
-		creditsPanel = GameObject.Find("CreditsPanel");
-		helpPanel = GameObject.Find("HelpPanel");
+		m_animator = GetComponent<Animator>();
 
-		optionsPanel.SetActive(false);
-		creditsPanel.SetActive(false);
-		helpPanel.SetActive(false);
+	//	optionsPanel = GameObject.Find("OptionsPanel");
+	//	creditsPanel = GameObject.Find("CreditsPanel");
+	//	helpPanel = GameObject.Find("HelpPanel");
 
-
-	}
-
-	public void Options()
-	{
-		creditsPanel.SetActive(false);
-		helpPanel.SetActive(false);
-		optionsPanel.SetActive(true);
+	//	optionsPanel.SetActive(false);
+	//	creditsPanel.SetActive(false);
+	//	helpPanel.SetActive(false);
 
 
 	}
 
-	public void Credits()
-	{
-		optionsPanel.SetActive(false);
-		helpPanel.SetActive(false);
-		creditsPanel.SetActive(true);
-	}
+	//public void Options()
+	//{
+	//	creditsPanel.SetActive(false);
+	//	helpPanel.SetActive(false);
+	//	optionsPanel.SetActive(true);
 
-	public void Help()
-	{
-		optionsPanel.SetActive(false);
-		creditsPanel.SetActive(false);
-		helpPanel.SetActive(true);
 
-	}
+	//}
+
+	//public void Credits()
+	//{
+	//	optionsPanel.SetActive(false);
+	//	helpPanel.SetActive(false);
+	//	creditsPanel.SetActive(true);
+	//}
+
+	//public void Help()
+	//{
+	//	optionsPanel.SetActive(false);
+	//	creditsPanel.SetActive(false);
+	//	helpPanel.SetActive(true);
+
+	//}
 
 	public void PlayGame(string sceneName)
 	{
-		SceneManager.LoadScene (sceneName);
+		m_animator.SetBool("Scene", false);
+		StartCoroutine(NextScene(sceneName));
+	}
+
+	private IEnumerator NextScene(string a_scene)
+	{
+		yield return new WaitForSeconds(5);
+
+		SceneManager.LoadScene(a_scene);
 	}
 
 	public void Quit()
 	{
+		m_animator.SetBool("Scene", false);
+
+		StartCoroutine(QuitApplication());
+
+	}
+
+	private IEnumerator QuitApplication()
+	{
+		yield return new WaitForSeconds(5);
+
 		#if UNITY_EDITOR
 		UnityEditor.EditorApplication.isPlaying = false;
 

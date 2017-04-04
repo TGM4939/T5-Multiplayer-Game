@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 	public GameObject restartPanel;
 
 	SelectCharacter selectCharObj;
-	CharHealthBar charHBObj;
+	//CharHealthBar charHBObj;
 
 	public Transform playerPos;
 	public GameObject playerGO;
@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 	{
 		//GameObject.DontDestroyOnLoad (GetComponent<SelectCharacter> ().passChar);
 		restartPanel.SetActive (false);
-		charHBObj = GetComponent<CharHealthBar> ();
+		//charHBObj = GetComponent<CharHealthBar> ();
 
 		GameObject newChar = (GameObject) Instantiate (SelectCharacter.passChar, playerPos.position, Quaternion.identity);
 		newChar.transform.parent = gameObject.transform;
@@ -32,9 +32,9 @@ public class GameManager : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if (charHBObj.currentHealth <= 0) 
-		{
-			restartPanel.SetActive (true);
-		} 
+		//if (charHBObj.currentHealth <= 0) 
+		//{
+		//	restartPanel.SetActive (true);
+		//} 
 	}
 }

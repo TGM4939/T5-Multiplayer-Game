@@ -41,7 +41,6 @@ public class SelectCharacter : MonoBehaviour
 		// If a character is in scene
 		if(charIsActive)
 		{
-			
 			activeChar = GameObject.FindGameObjectWithTag ("Character");
 			Destroy (activeChar);
 			charIsActive = false;
@@ -81,7 +80,6 @@ public class SelectCharacter : MonoBehaviour
 		if (charIsActive)
 		{
 			SceneManager.LoadScene (sceneName);
-
 		}
 	}
 }

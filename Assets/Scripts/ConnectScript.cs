@@ -9,6 +9,7 @@ public class ConnectScript : MonoBehaviour {
 	public string RoomName = "Room";
 	public Text NetworkStatus;
 	public Button PlayButton;
+	public Animator Animator;
 
 	// Use this for initialization
 	void Start () 
@@ -16,6 +17,7 @@ public class ConnectScript : MonoBehaviour {
 		PhotonNetwork.ConnectUsingSettings (VERSION);
 		PhotonNetwork.automaticallySyncScene = true;
 		PlayButton.interactable = false;
+		Animator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -23,13 +25,13 @@ public class ConnectScript : MonoBehaviour {
 	{
 		if (!PhotonNetwork.connected) 
 		{
-			NetworkStatus.text = "Connecting";
+			NetworkStatus.text = "Connecting...";
 			NetworkStatus.color = Color.red;
 			PlayButton.interactable = false;
 		}
 		else 
 		{
-			NetworkStatus.text = "Ready";
+			NetworkStatus.text = "Ready!";
 			NetworkStatus.color = Color.green;
 			PlayButton.interactable = true;
 		}
@@ -37,6 +39,8 @@ public class ConnectScript : MonoBehaviour {
 
 	public void ConnectToNetwork()
 	{
+		Animator.SetBool("Scene", false); //Will make the Scene Disappear..
+
 		if (PhotonNetwork.connected) 
 		{
 			RoomOptions roomOptions = new RoomOptions () { IsVisible = false, MaxPlayers = 2 };
