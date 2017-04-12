@@ -1,9 +1,9 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T5-Multiplayer-Game", "Assembly-CSharp.csproj", "{83BAB0FA-130D-756F-AB9B-6ED9DF9E271E}"
+# Visual Studio 2008
+
+Project("{E2AD4780-F241-5C24-6677-E66EF8DA163D}") = "T5-Multiplayer-Game", "Assembly-CSharp.csproj", "{83BAB0FA-130D-756F-AB9B-6ED9DF9E271E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T5-Multiplayer-Game", "Assembly-CSharp-Editor.csproj", "{120CCF40-4FF4-C0AE-D95E-97CE3E886700}"
+Project("{E2AD4780-F241-5C24-6677-E66EF8DA163D}") = "T5-Multiplayer-Game", "Assembly-CSharp-Editor.csproj", "{120CCF40-4FF4-C0AE-D95E-97CE3E886700}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

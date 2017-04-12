@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NetworkManager : MonoBehaviour {
-	
-	public string PlayerPrefabName = "golem";
-	public Transform SpawnPoint;
+public class NetworkManager : MonoBehaviour 
+{
+	public Transform[] SpawnPoints;
+	private string Character;
 
 	// Use this for initialization
 	void Start () 
 	{
-		PhotonNetwork.Instantiate (PlayerPrefabName, SpawnPoint.position, SpawnPoint.rotation, 0);
+		Character = PlayerPrefs.GetString ("Character");
+		PhotonNetwork.Instantiate (Character, SpawnPoints[PhotonNetwork.player.ID - 1].position, Quaternion.identity, 0);
 	}
 }
